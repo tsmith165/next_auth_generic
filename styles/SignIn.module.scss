@@ -16,8 +16,6 @@
 .email_label { color: $light; font-size: 18px; font-weight: bold; margin-right: 10px; }
 .email_input { padding: 5px 10px; box-sizing: border-box; border-radius: 5px; flex: 2; background-color: $light !important; color: $secondary; }
 
-::selection { background-color:$light !important; }
-
 .submit_container { height: 40px; display: flex; flex-direction: row; }
 
 .sign_in_button { padding: 10px 20px; background-color: $light; border: 2px solid $secondary; color: $secondary; border-radius: 5px; font-weight: bold; margin-right: 10px;  }
