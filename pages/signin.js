@@ -4,7 +4,6 @@ import { getCsrfToken, signIn  } from "next-auth/react";
 import PageLayout from '../src/components/layout/PageLayout'
 import styles from '../styles/SignIn.module.scss'
 
-import { Backdrop } from '@material-ui/core';
 import { CircularProgress } from '@material-ui/core';
 
 export default function SignIn({ csrfToken }) {

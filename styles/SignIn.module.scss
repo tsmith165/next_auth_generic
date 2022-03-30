@@ -14,8 +14,11 @@
 
 .email_input_container { width: 100%; display: flex; flex-direction: row; margin-bottom: 10px; }
 .email_label { color: $light; font-size: 18px; font-weight: bold; margin-right: 10px; }
-.email_input { padding: 5px 10px; box-sizing: border-box; border-radius: 5px; flex: 2;  }
-.email_input:focus { }
+.email_input { padding: 5px 10px; box-sizing: border-box; border-radius: 5px; flex: 2; background-color: $light !important; color: $secondary; }
+.email_input:-webkit-autofill,
+.email_input:-webkit-autofill:hover, 
+.email_input:-webkit-autofill:focus, 
+.email_input:-webkit-autofill:active { background-color: $light !important; }
 
 .submit_container { height: 40px; display: flex; flex-direction: row; }
 
