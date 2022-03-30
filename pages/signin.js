@@ -24,7 +24,7 @@ export default function SignIn({  }) {
         
         if (email) {
             console.log("Attempting to Sign In...")
-            const response = await signIn("email", { email, redirect: false, callbackUrl: process.env.NEXTAUTH_URL })
+            const response = await signIn("email", { email, redirect: true, callbackUrl: process.env.NEXTAUTH_URL })
 
             console.log("Sign In Response (Next Line):")
             console.log(response)
@@ -33,7 +33,7 @@ export default function SignIn({  }) {
         }
         setLoading(false)
     }
-
+/*
     const [session, loading_session] = useSession({
         required: false,
         queryConfig: {
@@ -45,7 +45,7 @@ export default function SignIn({  }) {
     if (session) {
         Router.push('/')
     }
-
+*/
     return (
         <PageLayout>
             <div className={styles.full_sign_in_container}>
