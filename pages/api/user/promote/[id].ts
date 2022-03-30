@@ -2,13 +2,16 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../../../lib/prisma";
 import { getToken } from "next-auth/jwt"
 
-const secret = process.env.secret;
+const secret = process.env.SECRET;
 
 export default async function handler(req:NextApiRequest, res: NextApiResponse) {
   const id: string = req.query.id.toString();
-  console.log(`Start PROMOTE API for ID: ${id}`);
+  console.log(`Using Secret: ${secret}`);
 
   const token = await getToken({ req, secret })
+  console.log("Token (Next Line):")
+  console.log(token)
+  
   if (!token) {
     console.log("No token found.  Status: 401")
     res.status(401)
