@@ -6,7 +6,7 @@ import styles from '../styles/SignIn.module.scss'
 
 import { CircularProgress } from '@material-ui/core';
 
-export default function SignIn({ csrfToken }) {
+export default function SignIn({  }) {
 
     const [loading, setLoading] = useState(false)
     const [sent, setSent] = useState(false)
@@ -43,8 +43,7 @@ export default function SignIn({ csrfToken }) {
                     <div className={styles.sign_in_body}>
                         <div className={styles.email_form_container}>
                             <form method="post" onSubmit={handleSubmit} /*action="/api/auth/signin/email"*/>
-                                {/*<input name="csrfToken" type="hidden" defaultValue={csrfToken}/>*/}
-
+                                
                                 <div className={styles.email_input_container}>
                                     <label className={styles.email_label} htmlFor="email">{'Email Adress:'}</label>
                                     <input type="text" id="email" name="email" className={styles.email_input}/>
@@ -72,12 +71,4 @@ export default function SignIn({ csrfToken }) {
             </div>
         </PageLayout>
     )
-}
-
-
-export async function getServerSideProps(context) {
-    const csrfToken = await getCsrfToken(context)
-    return {
-      props: { csrfToken },
-    }
 }
