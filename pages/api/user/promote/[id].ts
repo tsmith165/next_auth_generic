@@ -6,12 +6,10 @@ const secret = process.env.SECRET;
 
 export default async function handler(req:NextApiRequest, res: NextApiResponse) {
   const id: string = req.query.id.toString();
-  console.log(`Using Secret: ${secret}`);
+  console.log(`Start PROMOTE API for ID: ${id}`);
 
   const token = await getToken({ req, secret })
-  console.log("Token (Next Line):")
-  console.log(token)
-  
+
   if (!token) {
     console.log("No token found.  Status: 401")
     res.status(401)
