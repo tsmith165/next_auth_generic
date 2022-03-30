@@ -63,7 +63,7 @@ function generate_bad_session() {
 const Navbar = ({}) => {
     const [session, loading] = useSession({
         required: true,
-        redirectTo: 'http://localhost:3000',
+        redirectTo: process.env.NEXTAUTH_URL,
         queryConfig: {
           staleTime: 60 * 1000 * 60 * 3, // 3 hours
           refetchInterval: 60 * 1000 * 5, // 5 minutes
