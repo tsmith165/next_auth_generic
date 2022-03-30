@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from 'react';
-import { getCsrfToken, signIn  } from "next-auth/react";
+import { signIn  } from "next-auth/react";
+
+import Router from 'next/router'
 
 import PageLayout from '../src/components/layout/PageLayout'
 import styles from '../styles/SignIn.module.scss'
@@ -30,6 +32,18 @@ export default function SignIn({  }) {
             if (response.error == null) { setSent(true) }
         }
         setLoading(false)
+    }
+
+    const [session, loading_session] = useSession({
+        required: false,
+        queryConfig: {
+          staleTime: 60 * 1000 * 60 * 3, // 3 hours
+          refetchInterval: 60 * 1000 * 5, // 5 minutes
+        },
+    });
+
+    if (session) {
+        Router.push('/')
     }
 
     return (
