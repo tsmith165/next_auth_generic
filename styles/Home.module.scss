@@ -1,0 +1,4 @@
+@import "../theme/theme";
+
+.main_container { height: calc(100vh - 100px); width: 100vw; position: absolute; overflow-y: scroll; overflow-x: hidden; background-color: $light }
+.main_body { padding: 10px; }
