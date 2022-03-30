@@ -23,7 +23,7 @@ export default function SignIn({ csrfToken }) {
         
         if (email) {
             console.log("Attempting to Sign In...")
-            const response = await signIn("email", { email, redirect: false, callbackUrl: "http://localhost:3000/" })
+            const response = await signIn("email", { email, redirect: false, callbackUrl: process.env.NEXTAUTH_URL })
 
             console.log("Sign In Response (Next Line):")
             console.log(response)
